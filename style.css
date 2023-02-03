@@ -18,8 +18,7 @@ html {
     rgba(81, 84, 115, 1) 87.1%
   ); */
 
-  background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)),
-    url(assets/21.jpg);
+  background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)),url(assets/21.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
