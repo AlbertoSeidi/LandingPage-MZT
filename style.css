@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+:root {
+  --font-color: white;
+  --background-header: #09090e;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  /* background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)); */
+  background-image: linear-gradient(
+    94.3deg,
+    rgba(26, 33, 64, 1) 10.9%,
+    rgba(81, 84, 115, 1) 87.1%
+  );
+}
+a {
+  text-decoration: none;
+  color: var(--font-color);
+  font-family: "Poppins", sans-serif;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+a img:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#header img {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+#header {
+  height: 90px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid white;
+  /* background: rgba(0, 0, 0, 0.1); */
+
+  opacity: 0.9;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+  text-transform: uppercase;
+
+  transform: 2ms ease-in;
+  position: relative;
+}
+
+#menu a:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0px;
+  height: 1px;
+  background: rgb(251, 255, 0);
+  transition: all 1s ease;
+}
+#menu a:hover:before {
+  width: 100%;
+}
+#container {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  margin-top: 1.6rem;
+}
+
+#container .card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 5px;
+  grid-row-gap: 15px;
+  grid-auto-columns: auto;
+  justify-items: center;
+}
+
+#container .cards {
+  text-transform: uppercase;
+  height: 280px;
+  width: 230px;
+  font-family: "Poppins", sans-serif;
+
+  border-radius: 8px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#container .cards {
+  margin: 5px;
+}
+
+#container .cards h1 {
+  margin: 12px 0;
+  color: white;
+}
+
+#container .cards .price {
+  background: blue;
+  border-radius: 4px;
+  margin: 2rem 3.2rem;
+  padding: 10px;
+  color: var(--font-color);
+  font-weight: 500;
+}
+
+@media (max-width: 100vw) {
+  #btn-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #btn-mobile {
+    display: block;
+  }
+
+  #menu {
+    /* display: none; */
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: var(--background-header);
+    height: 0px;
+    transition: 0.6s;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+
+    text-align: center;
+    /*    border-bottom: 2px solid rgba(0, 0, 0, 0.05); */
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    color: var(--font-color);
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
